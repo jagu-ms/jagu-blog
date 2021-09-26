@@ -79,13 +79,20 @@ class ViewPost extends React.Component {
     }
 
     renderActions(){
-        if(localStorage.getItem('token') && localStorage.getItem('_id') === this.state.post.author._id){
+        if(
+            localStorage.getItem('token') 
+            && localStorage.getItem('_id') === this.state.post.author._id
+        ){
             return ( 
                 <span>
                     <Link to={"/post/edit/"+this.state.post._id}>
                         <button className="btn btn-outline-danger mb-2 ml-2">edit</button>
                     </Link>
-                    <button className="btn btn-outline-danger mb-2 ml-2" onClick={this.deletePost}>delete</button>
+                    <button className="btn btn-outline-danger mb-2 ml-2" 
+                        onClick={this.deletePost}
+                    >
+                        delete
+                    </button>
                 </span>
             )
         }
@@ -97,7 +104,12 @@ class ViewPost extends React.Component {
             comments = this.state.post.comments.map(comment => {
                 return(
                     <p key={comment._id}>
-                        <strong className="text-muted">{comment.author._id === localStorage.getItem('_id') ? "me" : comment.author.name}</strong>
+                        <strong className="text-muted">
+                            {   
+                                comment.author._id === localStorage.getItem('_id') ? "me" 
+                                : comment.author.name
+                            }
+                        </strong>
                         <br/>
                         {comment.content}
                     </p>
@@ -112,7 +124,8 @@ class ViewPost extends React.Component {
         if(!localStorage.getItem('token')){
             return (
             <p>please login so we can add your comment</p>
-            // add a button for login and anthor one for signup if the client doesn't have an account.
+            // add a button for login and anthor one for signup 
+            // if the client doesn't have an account.
             )
         }
 
@@ -121,8 +134,15 @@ class ViewPost extends React.Component {
                 <h6>add comment</h6>
                 {this.state.commentError}
                 <form onSubmit={this.onSubmit}>
-                    <textarea value={this.state.comment} onChange={this.onChangeComment} className="form-control mb-2 mr-sm-2"></textarea>
-                    <input className="btn btn-outline-danger mb-2 ml-2" type="submit" value="add"/>
+                    <textarea value={this.state.comment} 
+                        onChange={this.onChangeComment} 
+                        className="form-control mb-2 mr-sm-2"
+                    >
+                    </textarea>
+                    <input 
+                        className="btn btn-outline-danger mb-2 ml-2" 
+                        type="submit" 
+                        value="add"/>
                 </form>
             </div>
         )

@@ -71,10 +71,25 @@ class CreatePost extends React.Component {
                     <form onSubmit={this.onSubmit}  >
                         <label  className="mb-2 mr-sm-2">title</label>
                         <br/>
-                        <input type="text" value={this.state.title} onChange={this.onChangeTitle} className="form-control mb-2 mr-sm-2"  placeholder="title" />
+                        <input 
+                            type="text" 
+                            value={this.state.title} 
+                            onChange={this.onChangeTitle} 
+                            className="form-control mb-2 mr-sm-2" 
+                            placeholder="title" 
+                        />
                         <label  className="mb-2 mr-sm-2">content</label>
-                        <textarea value={this.state.content} onChange={this.onChangeContent} className="form-control mb-2 mr-sm-2"  placeholder="write some content"></textarea>
-                        <button type="submit" className="btn btn-outline-danger mb-2">create</button>
+                        <textarea value={this.state.content} 
+                            onChange={this.onChangeContent} 
+                            className="form-control mb-2 mr-sm-2" 
+                            placeholder="write some content"
+                        >
+                        </textarea>
+                        <button type="submit" 
+                            className="btn btn-outline-danger mb-2"
+                        >
+                            create
+                        </button>
                     </form>
                 </div>
             </div>

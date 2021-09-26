@@ -11,7 +11,10 @@ exports.signup = (req, res , next) => {
     User.create(data)
     
     .then(user => {
-        let token = jwt.sign({id: user._id, name: user.name, email: user.email}, process.env.JWT_SECRET);
+        let token = jwt.sign(
+                {id: user._id, name: user.name, email: user.email},
+                process.env.JWT_SECRET
+            );
         res.json({token: token, _id: user._id})
     })
 

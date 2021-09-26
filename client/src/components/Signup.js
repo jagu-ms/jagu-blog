@@ -82,16 +82,33 @@ class Signup extends React.Component {
                         <form onSubmit={this.onSubmit}  >
                             <label  className="mb-2 mr-sm-2">name:</label>
                             <br/>
-                            <input type="text" value={this.state.name} onChange={this.onChangeName} className="form-control mb-2 mr-sm-2" placeholder="Enter name" />
+                            <input type="text" 
+                            value={this.state.name} 
+                            onChange={this.onChangeName} 
+                            className="form-control mb-2 mr-sm-2" 
+                            placeholder="Enter name" 
+                            />
 
                             <label  className="mb-2 mr-sm-2">email:</label>
                             <br/>
-                            <input type="email" value={this.state.email} onChange={this.onChangeEmail} className="form-control mb-2 mr-sm-2"  placeholder="Enter email" />
+                            <input type="email" 
+                            value={this.state.email} 
+                            onChange={this.onChangeEmail} 
+                            className="form-control mb-2 mr-sm-2" 
+                            placeholder="Enter email"
+                            />
                             
                             <label  className="mb-2 mr-sm-2">password:</label>
-                            <input type="password" value={this.state.password} onChange={this.onChangePassword} className="form-control mb-2 mr-sm-2"  placeholder="Enter password" />
+                            <input type="password" 
+                            value={this.state.password} 
+                            onChange={this.onChangePassword} 
+                            className="form-control mb-2 mr-sm-2" 
+                            placeholder="Enter password"
+                            />
 
-                            <button type="submit" className="btn btn-outline-danger mb-2">Sign Up </button>
+                            <button type="submit" className="btn btn-outline-danger mb-2">
+                                Sign Up 
+                            </button>
                         </form>
                     </div>
                 </div>

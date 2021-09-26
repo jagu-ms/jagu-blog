@@ -28,7 +28,12 @@ class Header extends React.Component {
                                 <Link className="nav-link" to="/post/create">create blog</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="#logout" className="nav-link" onClick={this.logout}>logout</a>
+                                <a href="#logout" 
+                                    className="nav-link" 
+                                    onClick={this.logout}
+                                >
+                                    logout
+                                </a>
                             </li>
                         </ul>
                     </nav>

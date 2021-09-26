@@ -57,7 +57,9 @@ class Home extends React.Component {
                             <h4>{post.title}</h4>
                             <h6 className="title">{post?.author?.name}</h6>
                             <p>{post.content.substr(0,50)}</p>
-                            <Link to={"/post/view/"+post._id}><p className="text-secondary">more...</p></Link>
+                            <Link to={"/post/view/"+post._id}>
+                                <p className="text-secondary">more...</p>
+                            </Link>
                             <hr className="border border-danger"/>
                         </div>
                     </div>
