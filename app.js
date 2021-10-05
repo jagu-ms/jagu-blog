@@ -42,11 +42,17 @@ app.use('/api/comments', commentsRouter);
 // http errors
 app.use((req, res, next) => next(createError(404)));
 
+// error middleware
 app.use((err, req, res, next) => {
-    if(err.name == "MongoError" || err.name == "ValidationError" || err.name == "CastError") { 
+    if(err.name === 'MongoError' || err.name === 'ValidationError' || err.name === 'CastError'){
+        // that means there are some data errors
         err.status = 422;
     }
-    res.status(err.status || 500).json({message: err.message || "some errors occured"})
+    if(req.get('accept').includes('json')){
+        res.status(err.status || 500).json({message: err.message || "we have some errors eccured."});
+    } else {
+        res.status(err.status || 500).sendFile(path.join(__dirname, 'public', 'index.html'));
+    }
 });
 
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
