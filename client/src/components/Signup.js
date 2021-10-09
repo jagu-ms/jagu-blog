@@ -69,11 +69,9 @@ class Signup extends React.Component {
     }
 
     renderError(){
-        return (
-            this.state.error  ? 
+        return this.state.error  ? 
             (<blockquote className="text-danger">Email unavailable</blockquote>)
             : ""
-        )
     }
 
     render() {

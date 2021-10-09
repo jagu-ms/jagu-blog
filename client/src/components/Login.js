@@ -54,15 +54,14 @@ class Login extends React.Component {
             this.setState({
                 error: err.response.status 
             });
+            console.log(err.response.status)
         });
     }
 
     renderError(){
-        return (
-            this.state.error  ? 
+        return  this.state.error  ? 
             (<blockquote className="text-danger">Incorrect email or password</blockquote>)
             : ""
-        )
     }
 
     render() {
