@@ -62,13 +62,18 @@ class Signup extends React.Component {
 
         .catch(err => {
             this.setState({
-                error: err.response.data.message,
+                error: err.response.status,
             });
+            console.log(err.response.status)
         });
     }
 
     renderError(){
-        return this.state.error ? (<blockquote>{this.state.error}</blockquote>) : "";
+        return (
+            this.state.error  ? 
+            (<blockquote className="text-danger">Email unavailable</blockquote>)
+            : ""
+        )
     }
 
     render() {
