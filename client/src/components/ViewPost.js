@@ -56,7 +56,7 @@ class ViewPost extends React.Component {
         axios.delete("/api/posts/"+this.state.post._id)
 
         .then(res => {
-            this.props.history.push('/');   
+            this.props.history.push('/mine');   
         })
     }
 

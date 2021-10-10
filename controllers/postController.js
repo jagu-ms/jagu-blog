@@ -31,6 +31,21 @@ exports.list = (req, res, next) => {
 
 };
 
+exports.mine = (req, res, next) => {
+    let authorId = req.params.id;
+
+    Post.find({author: authorId})
+    .select('-comments')
+    .sort({created_at: 'desc'})
+    .populate('author', 'name')
+
+    .then(posts => {
+        res.json(posts);
+    })
+
+    .catch(next);
+};
+
 exports.details = (req, res, next) => {
     let postId = req.params.id;
 

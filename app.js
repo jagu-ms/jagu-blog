@@ -12,7 +12,8 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var passportRouter = require('./routes/passport');
 var signupRouter = require('./routes/signup');  
-var postsRouter = require('./routes/posts');  
+var postsRouter = require('./routes/posts');
+
 var commentsRouter = require('./routes/comments');  
 
 

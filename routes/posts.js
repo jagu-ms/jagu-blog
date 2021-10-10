@@ -10,6 +10,8 @@ router.post('/', authMiddleware.authenticated, controller.create);
 
 router.get('/', controller.list);
 
+router.get('/mine/:id', controller.mine);
+
 router.get('/:id', controller.details); 
 
 router.put('/:id', authMiddleware.authenticated, controller.update);

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Mine from './components/Mine';
 import CreatePost from './components/CreatePost';
 import ViewPost from './components/ViewPost';
 import EditPost from './components/EditPost';
@@ -27,6 +28,7 @@ class App extends Component {
                 <Route exact path="/" component={Home}/>
                 <Route  path="/login" component={Login}/>
                 <Route  path="/signup" component={Signup}/>
+                <Route  path="/mine" component={Mine}/>
                 <Route  path="/post/create" component={CreatePost}/>
                 <Route  path="/post/view/:id" component={ViewPost}/>
                 <Route  path="/post/edit/:id" component={EditPost}/>

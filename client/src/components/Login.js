@@ -47,7 +47,7 @@ class Login extends React.Component {
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('_id', res.data._id);
             axios.defaults.headers.common = {'Authorization': res.data.token};
-            this.props.history.push('/');
+            this.props.history.push('/mine');
         })
 
         .catch(err => {
